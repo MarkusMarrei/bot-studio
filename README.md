@@ -5,7 +5,7 @@
 </p>
 
 > **The Open-Source Visual Node-Based IDE & Deterministic Python Compiler for Telegram Bots (`aiogram 3.x`)**  
-> *Design complex conversational flows visually on an infinite reactive canvas, test instantly in an offline simulator or directly in Telegram, co-pilot with local hardware-accelerated LLMs (Gemma / Qwen via embedded `llama.cpp`), and compile to clean, production-ready, standalone asynchronous Python with Zero Vendor Lock-in.*
+> *Design complex conversational flows visually on an infinite reactive canvas, test instantly in an offline simulator or directly in Telegram, co-pilot with local hardware-accelerated LLMs (Gemma via embedded `llama.cpp`), and compile to clean, production-ready, standalone asynchronous Python with Zero Vendor Lock-in.*
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Status-Beta_(Early_Development)-yellow.svg" alt="Beta Release" /></a>
@@ -148,7 +148,7 @@ Open **`http://localhost:5173`** in your browser.
 
 ---
 
-## 🛠 Visual Node Palette (10 Core Nodes)
+## 🛠 Visual Node Palette (9 Core Nodes)
 
 | Node | Category | Runtime & Canvas Capabilities |
 | :--- | :--- | :--- |
@@ -159,7 +159,6 @@ Open **`http://localhost:5173`** in your browser.
 | **🖼 Multimedia** | Media | Sends photos, videos, or audio with automatic media buffering for Telegram and custom captions |
 | **🤖 AI Assistant** | Intelligence | Local or cloud neural network integration with customizable system prompts, greetings, and anti-spam limits |
 | **📥 User Input (FSM)** | State Machine | Captures user responses into FSM states with type validation (text, number, phone, email) and custom retry errors |
-| **📊 Sheets / Database** | Data Storage | Automated lead capture into local CSV or database storage with customer interaction history |
 | **🔔 Admin Notification** | Alerts | Real-time direct alert delivery to administrator's Telegram DM with `{variable}` interpolation |
 | **🐍 Custom Python** | Extensibility | Executes custom asynchronous Python blocks with direct access to `aiogram 3.x` `state`, `message`, and context |
 
@@ -205,4 +204,4 @@ limitations under the License.
 
 ---
 
-> *Disclaimer: Bot Studio is an independent open-source project and is not affiliated, sponsored, or endorsed by Telegram FZ-LLC, Unity Technologies, or Google LLC.*
+> *Disclaimer: Bot Studio is an independent open-source project and is not affiliated, sponsored, or endorsed by Telegram FZ-LLC or Google LLC.*
