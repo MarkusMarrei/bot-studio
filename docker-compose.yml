@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: botstudio_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/models:/app/models
+    environment:
+      - BOTSTUDIO_HOST=0.0.0.0
+      - BOTSTUDIO_PORT=8000
+    networks:
+      - botstudio_net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: botstudio_frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - botstudio_net
+
+networks:
+  botstudio_net:
+    driver: bridge

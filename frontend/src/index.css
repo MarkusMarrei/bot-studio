@@ -1,0 +1,210 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+:root {
+  --bg-canvas: #f8fafc;
+  --bg-card: #ffffff;
+  --border-card: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent-red: #ff4438;
+  --accent-red-hover: #ef4444;
+  --accent-dark: #1e222d;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ========================================================
+   CRITICAL FIX: Remove React Flow default dark borders
+   and phantom offset boxes behind custom nodes
+   ======================================================== */
+.react-flow__node,
+.react-flow__node-input,
+.react-flow__node-default,
+.react-flow__node-output,
+.react-flow__node-group {
+  padding: 0 !important;
+  width: auto !important;
+  border: none !important;
+  border-width: 0 !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+}
+
+.react-flow__node-input.selectable:hover,
+.react-flow__node-default.selectable:hover,
+.react-flow__node-output.selectable:hover,
+.react-flow__node-group.selectable:hover,
+.react-flow__node-input.selectable.selected,
+.react-flow__node-input.selectable:focus,
+.react-flow__node-input.selectable:focus-visible,
+.react-flow__node.selected,
+.react-flow__node:focus,
+.react-flow__node:focus-visible {
+  border: none !important;
+  border-width: 0 !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ========================================================
+   CURSOR VISIBILITY RULES:
+   High contrast custom cursors with dense black outlines
+   ======================================================== */
+.react-flow__pane {
+  cursor: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M12%204%20C10.9%204%2010%204.9%2010%206%20L10%2013%20C9.6%2012.4%208.9%2012%208%2012%20C6.9%2012%206%2012.9%206%2014%20L6%2020%20C6%2025%2010%2029%2015%2029%20C20%2029%2024%2025%2024%2020%20L24%2013%20C24%2011.9%2023.1%2011%2022%2011%20C21.4%2011%2020.9%2011.3%2020.5%2011.7%20L20.5%209%20C20.5%207.9%2019.6%207%2018.5%207%20C17.9%207%2017.4%207.3%2017%207.7%20L17%206%20C17%204.9%2016.1%204%2015%204%20C14.4%204%2013.9%204.3%2013.5%204.7%20L13.5%206%20C13.5%204.9%2012.9%204%2012%204%20Z%22%20fill%3D%22%23f8fafc%22%20stroke%3D%22%23000000%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E') 15 15, grab !important;
+}
+
+.react-flow__pane:active,
+.react-flow__pane.dragging {
+  cursor: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M10%2012%20C8.9%2012%208%2012.9%208%2014%20L8%2020%20C8%2024.5%2011.5%2028%2016%2028%20C20.5%2028%2024%2024.5%2024%2020%20L24%2015%20C24%2013.9%2023.1%2013%2022%2013%20C21.2%2013%2020.5%2013.5%2020.2%2014.2%20C19.8%2013.5%2019%2013%2018%2013%20C17.2%2013%2016.5%2013.5%2016.2%2014.2%20C15.8%2013.5%2015%2013%2014%2013%20C13.2%2013%2012.5%2013.5%2012.2%2014.2%20C11.8%2013.5%2011%2012%2010%2012%20Z%22%20fill%3D%22%23f8fafc%22%20stroke%3D%22%23000000%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E') 16 16, grabbing !important;
+}
+
+.react-flow__node {
+  cursor: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M12%204%20C10.9%204%2010%204.9%2010%206%20L10%2013%20C9.6%2012.4%208.9%2012%208%2012%20C6.9%2012%206%2012.9%206%2014%20L6%2020%20C6%2025%2010%2029%2015%2029%20C20%2029%2024%2025%2024%2020%20L24%2013%20C24%2011.9%2023.1%2011%2022%2011%20C21.4%2011%2020.9%2011.3%2020.5%2011.7%20L20.5%209%20C20.5%207.9%2019.6%207%2018.5%207%20C17.9%207%2017.4%207.3%2017%207.7%20L17%206%20C17%204.9%2016.1%204%2015%204%20C14.4%204%2013.9%204.3%2013.5%204.7%20L13.5%206%20C13.5%204.9%2012.9%204%2012%204%20Z%22%20fill%3D%22%23f8fafc%22%20stroke%3D%22%23000000%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E') 15 15, grab !important;
+}
+
+.react-flow__node.dragging {
+  cursor: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M10%2012%20C8.9%2012%208%2012.9%208%2014%20L8%2020%20C8%2024.5%2011.5%2028%2016%2028%20C20.5%2028%2024%2024.5%2024%2020%20L24%2015%20C24%2013.9%2023.1%2013%2022%2013%20C21.2%2013%2020.5%2013.5%2020.2%2014.2%20C19.8%2013.5%2019%2013%2018%2013%20C17.2%2013%2016.5%2013.5%2016.2%2014.2%20C15.8%2013.5%2015%2013%2014%2013%20C13.2%2013%2012.5%2013.5%2012.2%2014.2%20C11.8%2013.5%2011%2012%2010%2012%20Z%22%20fill%3D%22%23f8fafc%22%20stroke%3D%22%23000000%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E') 16 16, grabbing !important;
+}
+
+.react-flow__handle {
+  cursor: crosshair !important;
+}
+
+/* High-contrast I-beam cursor for typing in inputs, textareas and selects */
+input,
+textarea,
+select {
+  cursor: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M10%206%20L22%206%20M16%206%20L16%2026%20M10%2026%20L22%2026%22%20stroke%3D%22%23000000%22%20stroke-width%3D%224.5%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M10%206%20L22%206%20M16%206%20L16%2026%20M10%2026%20L22%2026%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E') 16 16, text !important;
+  user-select: text !important;
+}
+
+button {
+  cursor: pointer !important;
+}
+
+/* ========================================================
+   EDGE CONNECTIONS & HANDLES:
+   Clean solid lines with moving arrows and black-bordered handles
+   ======================================================== */
+.react-flow__background {
+  background-color: #f8fafc !important;
+}
+
+/* High-contrast base connection path (clean solid line) */
+.react-flow__edge-path {
+  stroke: #64748b;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  transition: stroke 0.2s ease, stroke-width 0.2s ease;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: #ff4438 !important;
+  stroke-width: 3;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #ff4438 !important;
+  stroke-width: 3;
+}
+
+/* Round Handle Connector Dots with Dense Black Outline and Expanded Hit-Area */
+.react-flow__handle {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #000000 !important;
+  background: #ff4438 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.95), 0 2px 4px rgba(0, 0, 0, 0.25) !important;
+  z-index: 50 !important;
+  cursor: crosshair !important;
+  pointer-events: all !important;
+  transition: background 0.15s ease;
+}
+
+/* Expanded invisible hit-area (36px) so handles are effortless to click even when zoomed out! */
+.react-flow__handle::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  border-radius: 50%;
+  cursor: crosshair !important;
+  pointer-events: all !important;
+  z-index: 51 !important;
+}
+
+@keyframes handlePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 68, 56, 0.7), 0 0 0 1.5px rgba(255, 255, 255, 0.95), 0 2px 4px rgba(0, 0, 0, 0.25);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 68, 56, 0.4), 0 0 0 1.5px rgba(255, 255, 255, 0.95), 0 2px 6px rgba(255, 68, 56, 0.5);
+    transform: scale(1.22);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 68, 56, 0), 0 0 0 1.5px rgba(255, 255, 255, 0.95), 0 2px 4px rgba(0, 0, 0, 0.25);
+    transform: scale(1);
+  }
+}
+
+.react-flow__handle:hover,
+.react-flow__handle.connecting,
+.react-flow__handle.valid {
+  background: #ff4438 !important;
+  animation: handlePulse 1.2s infinite ease-in-out !important;
+  cursor: crosshair !important;
+}
+
+.react-flow__controls {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08) !important;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background: #ffffff !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  fill: #64748b !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #f8fafc !important;
+  fill: #0f172a !important;
+}
