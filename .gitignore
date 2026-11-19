@@ -40,3 +40,6 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# Private documentation & Knowledge Base
+PROJECT_KNOWLEDGE_BASE.md
