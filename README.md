@@ -1,13 +1,14 @@
-# Bot Studio IDE (v5.0) 🚀
+# Bot Studio IDE (v0.5.0 Beta) 🚀
 
 <p align="center">
   <img src="docs/BotStudio%20GitHub.jpg" alt="Bot Studio Header Banner" width="100%" />
 </p>
 
 > **Visual Node-Based IDE & Deterministic Python Compiler for Telegram Bots (`aiogram 3.x`)**  
-> *Design bots visually on an infinite reactive canvas, co-pilot with local LLMs (Gemma-4-E4B Q4 with hardware acceleration), test in a real-time simulator or directly in Telegram, and compile to clean, standalone asynchronous Python with Zero Vendor Lock-in.*
+> *Design Telegram bots visually on an infinite reactive canvas, co-pilot with local offline LLMs (Gemma / Qwen with hardware acceleration), test in a real-time simulator or directly in Telegram, and compile to clean, production-ready standalone asynchronous Python with Zero Vendor Lock-in.*
 
 <p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Status-Beta_(Early_Development)-yellow.svg" alt="Beta Release" /></a>
   <a href="https://img.shields.io/badge/OS-Windows%2010%2F11%20%7C%20Linux%20%7C%20macOS-blue.svg"><img src="https://img.shields.io/badge/OS-Windows%2010%2F11%20%7C%20Linux%20%7C%20macOS-blue.svg" alt="Cross-Platform OS" /></a>
   <a href="https://img.shields.io/badge/Hardware-AMD%20Vulkan%20%7C%20NVIDIA%20CUDA%20%7C%20Apple%20Metal%20%7C%20Intel-purple.svg"><img src="https://img.shields.io/badge/Hardware-AMD%20Vulkan%20%7C%20NVIDIA%20CUDA%20%7C%20Apple%20Metal%20%7C%20Intel-purple.svg" alt="Hardware Acceleration" /></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.14-emerald.svg" alt="Python Version" /></a>
@@ -16,6 +17,10 @@
   <a href="#"><img src="https://img.shields.io/badge/i18n-9_Languages-orange.svg" alt="9 Languages" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-lightgrey.svg" alt="License" /></a>
 </p>
+
+> [!NOTE]
+> **Project Status: Public Beta (Early Development Stage)**  
+> *Bot Studio is currently in its early beta phase. Core components — including the visual node canvas, deterministic aiogram 3.x compiler, offline simulator, live Telegram runner, and hardware-accelerated local LLM copilot — are active and functional. Because the project is at an early stage, APIs, schema, and UI layouts may evolve. We actively welcome feedback, suggestions, and GitHub Issues!*
 
 ---
 

@@ -1,7 +1,7 @@
 {
   "name": "botstudio-frontend",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.5.0-beta",
   "description": "Visual Bot Engineering IDE Frontend",
   "author": "Markus Marrei (Маркус Маррей)",
   "license": "Apache-2.0",

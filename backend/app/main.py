@@ -17,7 +17,7 @@ from app.utils.system_diag import get_system_diagnostics
 app = FastAPI(
     title="Bot Studio IDE API",
     description="Engine for visual Telegram bot development and compilation (aiogram 3.x)",
-    version="1.0.0",
+    version="0.5.0-beta",
     license_info={
         "name": "Apache 2.0",
         "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
